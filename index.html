@@ -3,102 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пиццерия</title>
+    <title>ПиццаММ - Лучшая пицца!</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">ПИЦЦАММ</div>
-        <button class="login-btn" onclick="showLoginForm()">Вход / Регистрация</button>
+        <div class="logo">ПиццаММ</div>
+        <nav>
+            <ul>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#cart">Корзина</a></li>
+                <li><button class="login-btn" onclick="showLoginForm()">Вход / Регистрация</button></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Форма регистрации -->
-    <div id="login-form" class="form-container">
-        <h2>Регистрация</h2>
-        <input type="text" id="username" placeholder="Имя" />
-        <input type="password" id="password" placeholder="Пароль" />
-        <button onclick="register()">Зарегистрироваться</button>
-        <button onclick="hideLoginForm()" class="close-btn">Закрыть</button>
-    </div>
+    <section class="hero">
+        <h1>Добро пожаловать в ПиццаММ!</h1>
+        <p>Свежее тесто, лучшие ингредиенты, быстрая доставка.</p>
+    </section>
 
-    <!-- Меню пицц -->
     <section id="menu" class="menu">
-        <h2>Меню Пицц</h2>
+        <h2>Наше Меню</h2>
         <div class="pizza-grid">
-            <div class="pizza" id="pizza1">
-                <img src="pizza1.jpg" alt="Пицца Маргарита" />
-                <h3>Пицца Маргарита</h3>
+            <div class="pizza-card" data-index="1">
+                <img src="pizza1.jpg" alt="Пицца Маргарита">
+                <h3>Маргарита</h3>
                 <p>Соус, моцарелла, помидоры, базилик</p>
                 <p class="price">35 BYN</p>
-                <button class="order-btn" onclick="orderPizza('Пицца Маргарита', 35)">Заказать</button>
+                <button class="order-btn" onclick="orderPizza('Маргарита', 35)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza2">
-                <img src="pizza2.jpg" alt="Пепперони" />
+            <div class="pizza-card" data-index="2">
+                <img src="pizza2.jpg" alt="Пепперони">
                 <h3>Пепперони</h3>
                 <p>Соус, моцарелла, пепперони</p>
                 <p class="price">40 BYN</p>
                 <button class="order-btn" onclick="orderPizza('Пепперони', 40)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza3">
-                <img src="pizza3.jpg" alt="Четыре сыра" />
+            <div class="pizza-card" data-index="3">
+                <img src="pizza3.jpg" alt="Четыре сыра">
                 <h3>Четыре сыра</h3>
                 <p>Моцарелла, пармезан, голубой сыр, чеддер</p>
                 <p class="price">50 BYN</p>
                 <button class="order-btn" onclick="orderPizza('Четыре сыра', 50)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza4">
-                <img src="pizza4.jpg" alt="Гавайская" />
+            <div class="pizza-card" data-index="4">
+                <img src="pizza4.jpg" alt="Гавайская">
                 <h3>Гавайская</h3>
                 <p>Соус, моцарелла, ветчина, ананас</p>
                 <p class="price">45 BYN</p>
                 <button class="order-btn" onclick="orderPizza('Гавайская', 45)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza5">
-                <img src="pizza5.jpg" alt="Мясная" />
+            <div class="pizza-card" data-index="5">
+                <img src="pizza5.jpg" alt="Мясная">
                 <h3>Мясная</h3>
                 <p>Говядина, курица, бекон, моцарелла</p>
                 <p class="price">55 BYN</p>
                 <button class="order-btn" onclick="orderPizza('Мясная', 55)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza6">
-                <img src="pizza6.jpg" alt="Вегетарианская" />
+            <div class="pizza-card" data-index="6">
+                <img src="pizza6.jpg" alt="Вегетарианская">
                 <h3>Вегетарианская</h3>
                 <p>Овощи, моцарелла, оливковое масло</p>
                 <p class="price">40 BYN</p>
                 <button class="order-btn" onclick="orderPizza('Вегетарианская', 40)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza7">
-                <img src="pizza7.jpg" alt="Пицца с морепродуктами" />
-                <h3>Пицца с морепродуктами</h3>
+            <div class="pizza-card" data-index="7">
+                <img src="pizza7.jpg" alt="Морепродукты">
+                <h3>Морепродукты</h3>
                 <p>Креветки, кальмары, моцарелла, соус</p>
                 <p class="price">60 BYN</p>
-                <button class="order-btn" onclick="orderPizza('Пицца с морепродуктами', 60)">Заказать</button>
+                <button class="order-btn" onclick="orderPizza('Морепродукты', 60)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza8">
-                <img src="pizza8.jpg" alt="Пицца BBQ" />
-                <h3>Пицца BBQ</h3>
+            <div class="pizza-card" data-index="8">
+                <img src="pizza8.jpg" alt="BBQ">
+                <h3>BBQ</h3>
                 <p>Говядина, курица, соус BBQ, моцарелла</p>
                 <p class="price">55 BYN</p>
-                <button class="order-btn" onclick="orderPizza('Пицца BBQ', 55)">Заказать</button>
+                <button class="order-btn" onclick="orderPizza('BBQ', 55)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza9">
-                <img src="pizza9.jpg" alt="Пицца с грибами" />
-                <h3>Пицца с грибами</h3>
+            <div class="pizza-card" data-index="9">
+                <img src="pizza9.jpg" alt="Грибы">
+                <h3>Грибы</h3>
                 <p>Грибы, моцарелла, соус, специи</p>
                 <p class="price">50 BYN</p>
-                <button class="order-btn" onclick="orderPizza('Пицца с грибами', 50)">Заказать</button>
+                <button class="order-btn" onclick="orderPizza('Грибы', 50)">Заказать</button>
             </div>
-            <div class="pizza" id="pizza10">
-                <img src="pizza10.jpg" alt="Пицца с ананасами" />
-                <h3>Пицца с ананасами</h3>
+            <div class="pizza-card" data-index="10">
+                <img src="pizza10.jpg" alt="Ананасы">
+                <h3>Ананасы</h3>
                 <p>Ананасы, моцарелла, бекон, соус</p>
                 <p class="price">48 BYN</p>
-                <button class="order-btn" onclick="orderPizza('Пицца с ананасами', 48)">Заказать</button>
+                <button class="order-btn" onclick="orderPizza('Ананасы', 48)">Заказать</button>
             </div>
         </div>
     </section>
 
-    <!-- Корзина -->
     <div id="cart-btn" class="cart-btn" onclick="toggleCart()">Корзина</div>
     <div id="cart" class="cart-container">
         <h3>Ваша корзина</h3>
@@ -106,13 +107,25 @@
         <button id="order-btn" onclick="placeOrder()">Оформить заказ</button>
     </div>
 
-    <!-- Блок с заказом -->
     <section id="order-summary" class="order-summary">
         <h2>Ваш заказ</h2>
         <div id="order-details"></div>
         <button id="confirm-order-btn" onclick="confirmOrder()">Подтвердить заказ</button>
         <div id="order-status"></div>
     </section>
+
+    <footer>
+        <p>&copy; 2025 ПиццаММ. Все права защищены.</p>
+        <p>Контакты: info@pizzamm.com | +375 29 123-45-67</p>
+    </footer>
+
+    <div id="login-form" class="login-form">
+        <h2>Регистрация</h2>
+        <input type="text" id="username" placeholder="Имя">
+        <input type="password" id="password" placeholder="Пароль">
+        <button onclick="register()">Зарегистрироваться</button>
+        <button onclick="hideLoginForm()" class="close-btn">Закрыть</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
