@@ -2,7 +2,12 @@ let order = [];
 let isRegistered = false;
 
 function showLoginForm() {
-    document.getElementById('login-form').style.display = 'block';
+    const form = document.getElementById('login-form');
+    form.style.display = 'block';
+}
+
+function hideLoginForm() {
+    document.getElementById('login-form').style.display = 'none';
 }
 
 function register() {
@@ -12,11 +17,26 @@ function register() {
     if (username && password) {
         isRegistered = true;
         document.getElementById('login-form').style.display = 'none';
-        document.getElementById('account-info').innerHTML = `Привет, ${username} <span onclick="showLoginForm()" style="cursor: pointer;">(Выйти)</span>`;
+        document.querySelector('header').innerHTML = `
+            <div class="logo">ПИЦЦАММ</div>
+            <span>Привет, ${username} <button class="logout-btn" onclick="logout()">Выйти</button></span>
+        `;
         document.getElementById('menu').style.display = 'block';
     } else {
         alert('Пожалуйста, заполните все поля!');
     }
+}
+
+function logout() {
+    isRegistered = false;
+    document.querySelector('header').innerHTML = `
+        <div class="logo">ПИЦЦАММ</div>
+        <button class="login-btn" onclick="showLoginForm()">Вход / Регистрация</button>
+    `;
+    order = [];
+    updateCart();
+    document.getElementById('cart').style.display = 'none';
+    document.getElementById('order-summary').style.display = 'none';
 }
 
 function orderPizza(pizzaName, price) {
