@@ -142,17 +142,23 @@
     <div id="cart" class="cart-container">
         <h3>Ваша корзина</h3>
         <div id="cart-items"></div>
-        <input type="text" id="delivery-address" placeholder="Адрес доставки" style="width: 100%; margin: 10px 0;">
+        <input type="text" id="delivery-address" placeholder="Введите адрес доставки" style="width: 100%; margin: 10px 0; padding: 10px; border-radius: 5px;">
+        <p id="cart-total" style="margin: 10px 0; font-weight: bold;"></p>
         <button id="order-btn" onclick="placeOrder()">Оформить заказ</button>
     </div>
 
     <section id="order-summary" class="order-summary">
         <h2>Ваш заказ</h2>
         <div id="order-details"></div>
-        <input type="text" id="delivery-address-confirm" placeholder="Подтвердите адрес доставки" style="width: 100%; margin: 10px 0;">
+        <input type="text" id="delivery-address-confirm" placeholder="Подтвердите адрес доставки" style="width: 100%; margin: 10px 0; padding: 10px; border-radius: 5px;">
         <button id="confirm-order-btn" onclick="confirmOrder()">Оплатить</button>
         <div id="order-status"></div>
     </section>
+
+    <div id="order-image" class="order-image">
+        <img src="pizza3.jpg" alt="Заказ оформлен">
+        <button onclick="hideOrderImage()">Закрыть</button>
+    </div>
 
     <footer>
         <p>© 2025 ПиццаММ. Все права защищены.</p>
