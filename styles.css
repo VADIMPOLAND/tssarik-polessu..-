@@ -1,228 +1,42 @@
-/* Основные стили */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f4f4f4;
 }
-
-h2, h3 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
-
-/* Стиль для шапки */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: right;
-    font-size: 18px;
-}
-
-/* Форма регистрации */
-.form-container {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    width: 300px;
+.form-container, .menu, .cart-container, .order-summary {
+    max-width: 1200px;
     margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #ff4500;
-}
-
-/* Меню пицц */
-#menu {
     padding: 20px;
-    text-align: center;
 }
-
 .pizza {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
     display: inline-block;
     width: 200px;
-    margin: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
 }
-
-.pizza:hover {
-    transform: scale(1.05);
-}
-
 .pizza img {
-    width: 100%;
+    width: 180px;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
 }
-
-.pizza h3 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.pizza p {
-    font-size: 14px;
-    color: #666;
-}
-
-.order-btn {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.order-btn:hover {
-    background-color: #ff4500;
-}
-
-/* Блок с заказом */
-#order-summary {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    width: 300px;
-    margin: 30px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-#order-details {
-    margin-bottom: 20px;
-}
-
-#order-status {
-    font-size: 16px;
-    color: green;
-}
-
-/* Кнопка корзины */
 .cart-btn {
     position: fixed;
     right: 20px;
-    bottom: 20px;
-    background-color: #ff6347;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-.cart-btn:hover {
-    background-color: #ff4500;
-}
-
-/* Корзина */
-#cart {
-    display: none;
-    position: fixed;
-    right: 20px;
-    bottom: 70px;
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-    z-index: 999;
-}
-
-#cart-items {
-    margin-bottom: 20px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-#cart-items div {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#cart-items button {
-    background-color: #ff4500;
+    top: 20px;
+    padding: 10px;
+    background: #ff6347;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease;
 }
-
-#cart-items button:hover {
-    background-color: #e03a2c;
+.cart-container, .order-summary {
+    display: none;
+    background: #fff;
+    border: 1px solid #ddd;
 }
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .pizza {
-        width: 150px;
-        margin: 10px;
-    }
-
-    #menu {
-        padding: 10px;
-    }
-
-    .cart-btn {
-        right: 10px;
-        bottom: 10px;
-        padding: 12px 15px;
-        font-size: 16px;
-    }
-
-    #cart {
-        width: 250px;
-        bottom: 60px;
-    }
-
-    .form-container, #order-summary {
-        width: 250px;
-    }
+#cart-items, #order-details {
+    margin: 10px 0;
 }
