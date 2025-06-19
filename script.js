@@ -47,10 +47,10 @@ function updateCart() {
     cartItems.innerHTML = '';
     let totalPrice = 0;
     order.forEach((item, index) => {
-        cartItems.innerHTML += `${item.pizzaName} - ${item.price} BYN <button onclick="removePizza(${index})">Удалить</button><br>`;
+        cartItems.innerHTML += `<div>${item.pizzaName} - ${item.price} BYN <button onclick="removePizza(${index})">Удалить</button></div>`;
         totalPrice += item.price;
     });
-    cartItems.innerHTML += `Итого: ${totalPrice} BYN`;
+    document.getElementById('cart-total').textContent = `Итого: ${totalPrice} BYN`;
 }
 
 function removePizza(index) {
@@ -94,14 +94,19 @@ function updateOrderSummary() {
 function confirmOrder() {
     const address = document.getElementById('delivery-address-confirm').value;
     if (order.length > 0 && address) {
-        alert(`Ваш заказ на сумму ${document.getElementById('order-details').textContent.match(/Общая сумма: (\d+) BYN/)[1]} BYN принят! Доставка на адрес: ${address}. Оплата подтверждена.`);
-        order = [];
-        document.getElementById('order-summary').style.display = 'none';
-        updateCart();
-        document.getElementById('cart-count').textContent = order.length;
+        document.getElementById('order-image').style.display = 'block';
+        document.getElementById('order-status').textContent = `Заказ на сумму ${document.getElementById('order-details').textContent.match(/Общая сумма: (\d+) BYN/)[1]} BYN принят! Доставка на адрес: ${address}. Оплата подтверждена.`;
     } else {
         alert('Пожалуйста, укажите адрес доставки и добавьте пиццы в корзину!');
     }
+}
+
+function hideOrderImage() {
+    document.getElementById('order-image').style.display = 'none';
+    order = [];
+    document.getElementById('order-summary').style.display = 'none';
+    updateCart();
+    document.getElementById('cart-count').textContent = order.length;
 }
 
 function filterPizzas() {
