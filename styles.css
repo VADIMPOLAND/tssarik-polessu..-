@@ -63,6 +63,21 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+.logout-btn {
+    padding: 8px 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
+}
+
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -244,6 +259,26 @@ nav ul li a:hover {
     max-height: 400px;
     overflow-y: auto;
     animation: slideUp 0.5s ease-out;
+    border: 2px solid #ff6b6b;
+}
+
+.cart-container h3 {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+.cart-container #cart-items {
+    margin-bottom: 15px;
+}
+
+.cart-container #cart-items div {
+    padding: 10px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 10px;
+}
+
+.cart-container #cart-total {
+    color: #4ecdc4;
 }
 
 .order-summary {
@@ -255,6 +290,36 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-out;
+}
+
+.order-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2000;
+    animation: zoomIn 0.5s ease-out;
+}
+
+.order-image img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+}
+
+.order-image button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .promotions {
@@ -395,6 +460,11 @@ footer {
 
 @keyframes popIn {
     from { transform: translate(-50%, -60%) scale(0.9); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
     to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }
 
