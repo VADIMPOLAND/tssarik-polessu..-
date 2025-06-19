@@ -8,115 +8,115 @@
 </head>
 <body>
     <header>
-        <div class="account-info" id="account-info" role="region" aria-label="Информация о пользователе">
-            <span id="login" onclick="showLoginForm()" role="button" tabindex="0">Войти / Регистрация</span>
+        <div class="account-info" id="account-info">
+            <span id="login" onclick="showLoginForm()">Войти / Регистрация</span>
         </div>
     </header>
 
     <!-- Форма регистрации -->
-    <div id="login-form" class="form-container" role="dialog" aria-labelledby="login-title">
+    <div id="login-form" class="form-container">
         <h1>ПИЦЦАММ</h1>
-        <h2 id="login-title">Регистрация</h2>
-        <input type="text" id="username" placeholder="Имя" aria-label="Имя пользователя" required>
-        <input type="password" id="password" placeholder="Пароль" aria-label="Пароль" required>
-        <button onclick="register()" aria-label="Зарегистрироваться">Зарегистрироваться</button>
+        <h2>Регистрация</h2>
+        <input type="text" id="username" placeholder="Имя" />
+        <input type="password" id="password" placeholder="Пароль" />
+        <button onclick="register()">Зарегистрироваться</button>
     </div>
 
     <!-- Меню пицц -->
-    <section id="menu" class="menu" role="region" aria-label="Меню пицц">
+    <section id="menu" class="menu">
         <h2>Меню Пицц</h2>
-        <div class="pizza" id="pizza1" role="article">
-            <img src="pizza1.jpg" alt="Пицца Маргарита">
+        <div class="pizza" id="pizza1">
+            <img src="pizza1.jpg" alt="Пицца Маргарита" />
             <h3>Пицца Маргарита</h3>
             <p>Соус, моцарелла, помидоры, базилик</p>
             <p>Цена: 35 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Пицца Маргарита', 35)" aria-label="Заказать Пицца Маргарита">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Пицца Маргарита', 35)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza2" role="article">
-            <img src="pizza2.jpg" alt="Пепперони">
+        <div class="pizza" id="pizza2">
+            <img src="pizza2.jpg" alt="Пепперони" />
             <h3>Пепперони</h3>
             <p>Соус, моцарелла, пепперони</p>
             <p>Цена: 40 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Пепперони', 40)" aria-label="Заказать Пепперони">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Пепперони', 40)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza3" role="article">
-            <img src="pizza3.jpg" alt="Четыре сыра">
+        <div class="pizza" id="pizza3">
+            <img src="pizza3.jpg" alt="Четыре сыра" />
             <h3>Четыре сыра</h3>
             <p>Моцарелла, пармезан, голубой сыр, чеддер</p>
             <p>Цена: 50 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Четыре сыра', 50)" aria-label="Заказать Четыре сыра">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Четыре сыра', 50)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza4" role="article">
-            <img src="pizza4.jpg" alt="Гавайская">
+        <div class="pizza" id="pizza4">
+            <img src="pizza4.jpg" alt="Гавайская" />
             <h3>Гавайская</h3>
             <p>Соус, моцарелла, ветчина, ананас</p>
             <p>Цена: 45 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Гавайская', 45)" aria-label="Заказать Гавайская">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Гавайская', 45)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza5" role="article">
-            <img src="pizza5.jpg" alt="Мясная">
+        <div class="pizza" id="pizza5">
+            <img src="pizza5.jpg" alt="Мясная" />
             <h3>Мясная</h3>
             <p>Говядина, курица, бекон, моцарелла</p>
             <p>Цена: 55 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Мясная', 55)" aria-label="Заказать Мясная">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Мясная', 55)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza6" role="article">
-            <img src="pizza6.jpg" alt="Вегетарианская">
+        <div class="pizza" id="pizza6">
+            <img src="pizza6.jpg" alt="Вегетарианская" />
             <h3>Вегетарианская</h3>
             <p>Овощи, моцарелла, оливковое масло</p>
             <p>Цена: 40 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Вегетарианская', 40)" aria-label="Заказать Вегетарианская">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Вегетарианская', 40)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza7" role="article">
-            <img src="pizza7.jpg" alt="Пицца с морепродуктами">
+        <div class="pizza" id="pizza7">
+            <img src="pizza7.jpg" alt="Пицца с морепродуктами" />
             <h3>Пицца с морепродуктами</h3>
             <p>Креветки, кальмары, моцарелла, соус</p>
             <p>Цена: 60 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Пицца с морепродуктами', 60)" aria-label="Заказать Пицца с морепродуктами">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Пицца с морепродуктами', 60)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza8" role="article">
-            <img src="pizza8.jpg" alt="Пицца BBQ">
+        <div class="pizza" id="pizza8">
+            <img src="pizza8.jpg" alt="Пицца BBQ" />
             <h3>Пицца BBQ</h3>
             <p>Говядина, курица, соус BBQ, моцарелла</p>
             <p>Цена: 55 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Пицца BBQ', 55)" aria-label="Заказать Пицца BBQ">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Пицца BBQ', 55)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza9" role="article">
-            <img src="pizza9.jpg" alt="Пицца с грибами">
+        <div class="pizza" id="pizza9">
+            <img src="pizza9.jpg" alt="Пицца с грибами" />
             <h3>Пицца с грибами</h3>
             <p>Грибы, моцарелла, соус, специи</p>
             <p>Цена: 50 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Пицца с грибами', 50)" aria-label="Заказать Пицца с грибами">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Пицца с грибами', 50)">Заказать</button>
         </div>
-        <div class="pizza" id="pizza10" role="article">
-            <img src="pizza10.jpg" alt="Пицца с ананасами">
+        <div class="pizza" id="pizza10">
+            <img src="pizza10.jpg" alt="Пицца с ананасами" />
             <h3>Пицца с ананасами</h3>
             <p>Ананасы, моцарелла, бекон, соус</p>
             <p>Цена: 48 BYN</p>
-            <button class="order-btn" onclick="orderPizza('Пицца с ананасами', 48)" aria-label="Заказать Пицца с ананасами">Заказать</button>
+            <button class="order-btn" onclick="orderPizza('Пицца с ананасами', 48)">Заказать</button>
         </div>
     </section>
 
-    <!-- Кнопка корзины -->
-    <div id="cart-btn" class="cart-btn" onclick="toggleCart()" role="button" tabindex="0" aria-label="Открыть корзину">Корзина</div>
+    <!-- Корзина (маленькая кнопка справа) -->
+    <div id="cart-btn" class="cart-btn" onclick="toggleCart()">Корзина</div>
 
     <!-- Корзина -->
-    <div id="cart" class="cart-container" role="region" aria-label="Корзина">
+    <div id="cart" class="cart-container">
         <h3>Ваша корзина</h3>
         <div id="cart-items">
             <!-- Здесь будет отображаться содержимое корзины -->
         </div>
-        <button id="order-btn" onclick="placeOrder()" aria-label="Оформить заказ">Заказать</button>
+        <button id="order-btn" onclick="placeOrder()" style="margin-top: 10px;">Заказать</button>
     </div>
 
     <!-- Блок с заказом -->
-    <section id="order-summary" class="order-summary" role="region" aria-label="Сводка заказа">
+    <section id="order-summary" class="order-summary">
         <h2>Ваш заказ</h2>
         <div id="order-details">
             <!-- Здесь будет выводиться заказ -->
         </div>
-        <button id="confirm-order-btn" onclick="confirmOrder()" aria-label="Подтвердить заказ">Подтвердить заказ</button>
-        <div id="order-status" aria-live="polite"></div>
+        <button id="confirm-order-btn" onclick="confirmOrder()">Подтвердить заказ</button>
+        <div id="order-status"></div>
     </section>
 
     <script src="script.js"></script>
