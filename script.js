@@ -2,8 +2,7 @@ let order = [];
 let isRegistered = false;
 
 function showLoginForm() {
-    const form = document.getElementById('login-form');
-    form.style.display = 'block';
+    document.getElementById('login-form').style.display = 'block';
 }
 
 function hideLoginForm() {
@@ -16,11 +15,8 @@ function register() {
 
     if (username && password) {
         isRegistered = true;
-        document.getElementById('login-form').style.display = 'none';
-        document.querySelector('header').innerHTML = `
-            <div class="logo">ПИЦЦАММ</div>
-            <span>Привет, ${username} <button class="logout-btn" onclick="logout()">Выйти</button></span>
-        `;
+        hideLoginForm();
+        document.querySelector('nav ul li:last-child').innerHTML = `Привет, ${username} <button class="logout-btn" onclick="logout()">Выйти</button>`;
         document.getElementById('menu').style.display = 'block';
     } else {
         alert('Пожалуйста, заполните все поля!');
@@ -29,10 +25,7 @@ function register() {
 
 function logout() {
     isRegistered = false;
-    document.querySelector('header').innerHTML = `
-        <div class="logo">ПИЦЦАММ</div>
-        <button class="login-btn" onclick="showLoginForm()">Вход / Регистрация</button>
-    `;
+    document.querySelector('nav ul li:last-child').innerHTML = `<button class="login-btn" onclick="showLoginForm()">Вход / Регистрация</button>`;
     order = [];
     updateCart();
     document.getElementById('cart').style.display = 'none';
@@ -100,3 +93,15 @@ function confirmOrder() {
         alert('Корзина пуста!');
     }
 }
+
+// Анимация при скроллинге
+window.addEventListener('scroll', () => {
+    const cards = document.querySelectorAll('.pizza-card');
+    cards.forEach(card => {
+        const cardPosition = card.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        if (cardPosition < screenPosition) {
+            card.classList.add('visible');
+        }
+    });
+});
